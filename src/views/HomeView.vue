@@ -1,6 +1,4 @@
 <template>
-/*eslint object-curly-newline: ["error", "never"]*/
-/*eslint-env es6*/
   <div class="home">
     <HeroSectionComponent msg="Welcome  to Your Vue.js + TypeScript App"/>
     <SpaceMainComponent />

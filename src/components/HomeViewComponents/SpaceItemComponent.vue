@@ -1,6 +1,9 @@
 <template>
     <div class="space__item" v-for="item in space" :key="item">
-              <img class="space__images" src={{item.imgUrl}} alt="image">
+      <div class="space__img">
+<img class="space__images"
+              :src="require(`@/assets/spacesection/` + item.imgUrl)" alt="image">
+      </div>
               <a class="space__link" href="#">
                 <div class="space__button">
                   <img class="space__svg" src="../../assets/spacesection/arrow.svg" alt="svg">
@@ -13,7 +16,7 @@
                  {{item.name}}
                 </h6>
                <p class="space__hover-text">
-                Comfortable place wich you can take for a long period of time
+                {{item.description}}
                </p>
                <button class="space__hover-btn">Check avaibility
                     <img class="space__hover-svg"
@@ -24,7 +27,7 @@
               </a>
              <div class="space__info">
                <p class="space__info-text">
-                Shared table
+                {{item.name}}
                </p>
                </div>
              </div>
@@ -46,41 +49,13 @@ export default defineComponent({
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 .container{
-    width: 1100px;
+    max-width: 1100px;
     margin: auto;
 }
 a{
   text-decoration: none;
 }
-.our-spaces{
-  padding: 55px 0 55px;
-  &__top{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  &__title{
-    font-family: 'Roboto Condensed';
-        font-size: 40px;
-        font-style: normal;
-        color: #231F20;
-        font-weight: 700;
-        line-height: 61px;
-  }
-  &__text{
-    width: 452px;
-    text-align: right;
-    font-family: 'Lato';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 28px;
-  }
-}
 .space{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
   &__item{
     position: relative;
     width: 350px;
@@ -116,6 +91,15 @@ line-height: 28px;
   &__svg{
     width: 15.5px;
     height: 10px;
+  }
+  &__img{
+    width: 350px;
+    height: 419px;
+  }
+  &__images{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
   &__hover{
     position: absolute;
