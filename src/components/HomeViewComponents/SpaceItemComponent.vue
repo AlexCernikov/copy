@@ -1,29 +1,23 @@
 <template>
-<!-- eslint-disable max-len -->
- <section class="our-spaces">
-    <div class="container">
-        <div class="our-spaces__top">
-        <h3 class="our-spaces__title">Our Spaces </h3>
-        <p class="our-spaces__text"> Our space is designed to give you a different experience when working with your team or personally </p>
-        </div>
-    <div class="space">
-        <div class="space__item">
-              <img class="space__images" src="../../assets/spacesection/image1.png" alt="image">
+    <div class="space__item" v-for="item in space" :key="item">
+              <img class="space__images" src={{item.imgUrl}} alt="image">
               <a class="space__link" href="#">
                 <div class="space__button">
                   <img class="space__svg" src="../../assets/spacesection/arrow.svg" alt="svg">
                 </div>
                 <div class="space__hover">
                   <div class="space__hover-front">
-                    <img class="space__hover-lines" src="../../assets/spacesection/lines.svg" alt="lines">
+                    <img class="space__hover-lines"
+                    src="../../assets/spacesection/lines.svg" alt="lines">
                   <h6 class="space__hover-title">
-                 Private Space
+                 {{item.name}}
                 </h6>
                <p class="space__hover-text">
                 Comfortable place wich you can take for a long period of time
                </p>
                <button class="space__hover-btn">Check avaibility
-                    <img class="space__hover-svg" src="../../assets/spacesection/arrow.svg" alt="svg">
+                    <img class="space__hover-svg"
+                    src="../../assets/spacesection/arrow.svg" alt="svg">
                   </button>
                   </div>
              </div>
@@ -32,66 +26,8 @@
                <p class="space__info-text">
                 Shared table
                </p>
+               </div>
              </div>
-            </div>
-            <div class="space__item">
-              <img class="space__images" src="../../assets/spacesection/image1.png" alt="image">
-              <a class="space__link" href="#">
-                <div class="space__button">
-                  <img class="space__svg" src="../../assets/spacesection/arrow.svg" alt="svg">
-                </div>
-                <div class="space__hover">
-                  <div class="space__hover-front">
-                    <img class="space__hover-lines" src="../../assets/spacesection/lines.svg" alt="lines">
-                  <h6 class="space__hover-title">
-                 Private Space
-                </h6>
-               <p class="space__hover-text">
-                Comfortable place wich you can take for a long period of time
-               </p>
-               <button class="space__hover-btn">Check avaibility
-                    <img class="space__hover-svg" src="../../assets/spacesection/arrow.svg" alt="svg">
-                  </button>
-                  </div>
-             </div>
-              </a>
-             <div class="space__info">
-               <p class="space__info-text">
-                Shared table
-               </p>
-             </div>
-            </div>
-            <div class="space__item">
-              <img class="space__images" src="../../assets/spacesection/image1.png" alt="image">
-              <a class="space__link" href="#">
-                <div class="space__button">
-                  <img class="space__svg" src="../../assets/spacesection/arrow.svg" alt="svg">
-                </div>
-                <div class="space__hover">
-                  <div class="space__hover-front">
-                    <img class="space__hover-lines" src="../../assets/spacesection/lines.svg" alt="lines">
-                  <h6 class="space__hover-title">
-                 Private Space
-                </h6>
-               <p class="space__hover-text">
-                Comfortable place wich you can take for a long period of time
-               </p>
-               <button class="space__hover-btn">Check avaibility
-                    <img class="space__hover-svg" src="../../assets/spacesection/arrow.svg" alt="svg">
-                  </button>
-                  </div>
-             </div>
-              </a>
-             <div class="space__info">
-               <p class="space__info-text">
-                Shared table
-               </p>
-             </div>
-            </div>
-    </div>
-    </div>
-
- </section>
 </template>
 
 <script lang="ts">
@@ -100,14 +36,12 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'spaceSectionComponent',
   props: {
-    src: {
-      type: String,
+    space: {
+      type: Array,
     },
   },
 });
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
