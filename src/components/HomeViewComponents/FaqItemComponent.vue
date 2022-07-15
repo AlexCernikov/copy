@@ -40,7 +40,6 @@ a{
         font-size: 26px;
         line-height: 30px;
         text-align: center;
-        
     }
     &__btn{
         border: none;

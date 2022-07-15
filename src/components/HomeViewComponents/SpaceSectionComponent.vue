@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 <!-- eslint-disable max-len -->
  <section class="our-spaces">
     <div class="container">
@@ -251,4 +251,4 @@ line-height: 28px;
     padding-left: 30px;
   }
 }
-</style>
+</style> -->

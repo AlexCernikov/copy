@@ -7,10 +7,15 @@
         <p class="our-spaces__text"> Our space is designed to give you a different experience when working with your team or personally </p>
         </div>
     <div class="space">
-      <SpaceItemComponent :space="space" />
+      <SpaceItemComponent
+      v-for="(item, index) in space"
+          :key="index"
+          :name="item.name"
+          :description="item.description"
+          :imgUrl="item.imgUrl"
+       />
     </div>
     </div>
-    <SpaceItemComponent v-for="item in space" :key="item"/>
  </section>
 </template>
 <script lang="ts">
@@ -53,6 +58,7 @@ export default defineComponent({
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 .container{
     width: 1100px;
     margin: auto;
