@@ -12,6 +12,9 @@
           :name="item.name">
       </FaqItemComponent>
     </div>
+    <a href="#">
+      <p class="faq__question">More questions</p>
+    </a>
     </div>
  </section>
 </template>
@@ -50,10 +53,6 @@ export default defineComponent({
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import "../../../public/scss/styles.scss";
-.container{
-    width: 1100px;
-    margin: auto;
-}
 a{
   text-decoration: none;
 }
@@ -62,8 +61,38 @@ a{
     @extend %title-font;
     text-align: center;
     width: 578px;
-   margin: 115px auto 62px;
-    color: #231F20;
+    margin: 115px auto 62px;
+    color: $brand-color;
     }
+    &__container{
+      width: 1100px;
+      margin: 0 auto;
+      margin-bottom: 100px;
+    }
+    &__dir{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+}
+.faq__question{
+  color: $btn-color;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  &:after{
+    content:"";
+    position: absolute;
+    background-image: url(../../assets/faqsection/arrow2.svg);
+    width: 9.5px;
+    height: 15px;
+    top: 1px;
+    right: -20px;
+    background-size: cover;
+  }
+  &:hover::after{
+    transform: rotate(90deg);
+  }
 }
 </style>
