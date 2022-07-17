@@ -1,5 +1,5 @@
 <template>
-    <div class="faq-item">
+    <div class="faq-item" @click="goToPage" @keypress="bar">
         <h6 class="faq-item__title">{{name}}</h6>
         <button class="faq-item__btn">
             <!-- <img class="faq-item__btn-arrow arrow"
@@ -18,6 +18,11 @@ export default defineComponent({
   props: {
     name: {
       type: String,
+    },
+  },
+  methods: {
+    goToPage() {
+      this.$router.push('/ourSpaces');
     },
   },
 });
